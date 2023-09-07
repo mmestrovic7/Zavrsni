@@ -19,10 +19,10 @@ public static class Pheromones
                 for (int k = 0; k < ants.Length; k++)
                 {
                     double length = TrailFunctions.TrailLength(ants[k], distances);
-                    double decrease = (1.0 - rho) * pheromones[i][j];
+                    double decrease = (1.0 - rho) * pheromones[i][j];//natural decrease by very little
                     double increase = 0.0;
-                    if (AreCitiesAdjacent(i, j, ants[k]))
-                        increase = (Q / length);
+                    if (AreCitiesConnected(i, j, ants[k]))
+                        increase = (Q / length); //increasing pheromones on the city connections used on the trail
 
                     pheromones[i][j] = decrease + increase;
 
@@ -38,7 +38,7 @@ public static class Pheromones
         }
     }
 
-    private static bool AreCitiesAdjacent(int city1, int city2, int[] trail)
+    private static bool AreCitiesConnected(int city1, int city2, int[] trail)
     {
         // are cities next to each other in the trail 
         int lastPosition = trail.Length - 1;

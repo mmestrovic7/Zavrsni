@@ -15,17 +15,9 @@ public static class Init
                 phers[i][j] = 0.01; //set all values to arbitrary value 0.01
         return phers;
     }
-    public static int[][] InitializeAnts(int numAnts, int numCities)
+    public static int[][] InitializeAnts(int numAnts, int numCities, int start)
     {
         int[][] ants = new int[numAnts][];
-        int start;
-        Console.Write("Unesite početni grad (broj u intervalu [0,"+(numCities-1)+"]): ");
-        var input = Console.ReadLine();
-        while (Int32.TryParse(input, out start) == false || start>=numCities||start<0)
-        {
-            Console.WriteLine("Unos nije ispravan! Unesite ponovno:");
-            input = Console.ReadLine();
-        }
         Console.WriteLine("Prvi nasumični putevi mravi");
         for (int i = 0; i < numAnts; i++)
             ants[i] = RandomTrail(numCities,start);

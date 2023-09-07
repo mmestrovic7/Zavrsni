@@ -14,7 +14,7 @@ namespace AntColony
             int numCities;
             Console.WriteLine("Unesite broj gradova:");
             var input = Console.ReadLine();
-            while (Int32.TryParse(input, out numCities) == false || numCities<=0)
+            while (Int32.TryParse(input, out numCities) == false || numCities <= 0)
             {
                 Console.WriteLine("Unos nije ispravan! Unesite ponovno:");
                 input = Console.ReadLine();
@@ -22,13 +22,21 @@ namespace AntColony
             int numAnts = numCities / 12;
             if (numAnts == 0)
                 numAnts = 1;
-            int numACOIterations = numCities * (int)Math.Pow(2, numAnts);
+            int numACOIterations = 3 * numCities * (int)Math.Pow(1.5, numAnts);
             Console.WriteLine("Broj mravi: " + numAnts);
             Console.WriteLine("Broj iteracija: " + numACOIterations);
             int[][] distances = Cities.RandomCityDistances(numCities);
             if (numCities <= 25)// because thats the most that'll fit on a full console screen
                 Cities.ShowDistanceMatrix(numCities, distances);
-            int[][] ants = Init.InitializeAnts(numAnts, numCities);
+            int start;
+            Console.Write("Unesite početni grad (broj u intervalu [0," + (numCities - 1) + "]): ");
+            input = Console.ReadLine();
+            while (Int32.TryParse(input, out start) == false || start >= numCities || start < 0)
+            {
+                Console.WriteLine("Unos nije ispravan! Unesite ponovno:");
+                input = Console.ReadLine();
+            }
+            int[][] ants = Init.InitializeAnts(numAnts, numCities, start);
             double[][] pheromones = Init.InitializePheromones(numCities);
             int[] bestTrail = TrailFunctions.BestTrail(ants, distances);
             // determine the best initial trail
@@ -39,7 +47,7 @@ namespace AntColony
 
             for (int i = 0; i < numACOIterations; i++)
             {
-                AntMoves.UpdateAnts(ants, pheromones, distances);
+                AntMoves.UpdateAnts(ants, pheromones, distances, start);
                 Pheromones.UpdatePheromones(pheromones, ants, distances);
 
                 int[] currentBestTrail = TrailFunctions.BestTrail(ants, distances);

@@ -9,20 +9,20 @@ public static class AntMoves
     static Random rand = new Random();
     static double alpha = 3; //influence on pheromone levels
     static double beta = 2;//influence of favorability of distance
-    public static void UpdateAnts(int[][] ants, double[][] pheromones, int[][] dists)
+    public static void UpdateAnts(int[][] ants, double[][] pheromones, int[][] dists, int start)
     {
         int numCities = pheromones.Length;
         for (int i = 0; i < ants.Length; i++)
         {
-            int[] newTrail = NewTrail(pheromones, dists);
+            int[] newTrail = NewTrail(pheromones, dists,start);
             ants[i] = newTrail;
         }
     }
-    public static int[] NewTrail(double[][] pheromones, int[][] distances)
+    public static int[] NewTrail(double[][] pheromones, int[][] distances, int start)
     {
 
         int numCities = pheromones.Length;
-        int start = rand.Next(0, numCities);
+        //int start = rand.Next(0, numCities);
         int[] trail = new int[numCities];
         bool[] visited = new bool[numCities];
         trail[0] = start;
@@ -39,17 +39,29 @@ public static class AntMoves
     static int NextCity(int currentCity, bool[] visited, double[][] pheromones, int[][] distances)
     {
         double[] probs = CalculateProbabilities(currentCity, visited, pheromones, distances);
-
+        double bestProbability = probs[0];
+        //int nextCity=0;
         double[] cumulativeProbs = new double[probs.Length + 1];
-        cumulativeProbs[0] = 0;
-        for (int i = 0; i < probs.Length; ++i)
-            cumulativeProbs[i + 1] = cumulativeProbs[i] + probs[i];
+         cumulativeProbs[0] = 0;
+         for (int i = 0; i < probs.Length; i++)
+             cumulativeProbs[i + 1] = cumulativeProbs[i] + probs[i];
 
-        double p = rand.NextDouble();// returns a number in range[0,1>
-        for (int i = 0; i < cumulativeProbs.Length - 1; ++i)
-            if (p >= cumulativeProbs[i] && p < cumulativeProbs[i + 1])
-                return i;
-        throw new Exception("Greška u funkciji NextCity");
+         double p = rand.NextDouble();// returns a number in range[0,1>
+         for (int i = 0; i < cumulativeProbs.Length - 1; i++)
+             if (p >= cumulativeProbs[i] && p < cumulativeProbs[i + 1])
+                 return i;
+         throw new Exception("Greška u funkciji NextCity");
+        /*
+       for (int i = 1; i < probs.Length; i++)
+            if (probs[i] > bestProbability)
+            {
+                bestProbability = probs[i];
+                nextCity = i;
+            }
+        return nextCity;         
+        */
+
+
     }
     static double[] CalculateProbabilities(int currentCity, bool[] visited, double[][] pheromones, int[][] distances)
     {

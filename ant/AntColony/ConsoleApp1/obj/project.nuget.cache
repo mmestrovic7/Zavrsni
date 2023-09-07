@@ -1,11 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OoJ/toTDasl22T327nsAzkMWAmfXjWEdy23r+tydsS5DrpuFfP2uxwGnT8zLkwyFOIrLI9+bL68jntstebFKow==",
+  "dgSpecHash": "AssVp23mFiXzUXDfpbTUR5tnLwZRaf61gpLDG6QDk1suOgQYXaraq216d40mbLsBf/fyy2bG0Yc9TQV4XAFIhw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\ant\\AntColony\\ConsoleApp1\\AntColony.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.21\\microsoft.netcore.app.host.win-x64.3.1.21.nupkg.sha512",
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\Zavrsni\\ant\\AntColony\\ConsoleApp1\\AntColony.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
