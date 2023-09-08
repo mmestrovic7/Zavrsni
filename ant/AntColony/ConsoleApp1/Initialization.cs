@@ -26,7 +26,7 @@ public static class Init
     }
     static int[] RandomTrail(int numCities, int start)
     {
-        ;
+        
         int[] trail = new int[numCities];
         trail[0] = start;
         for (int i = 1; i < numCities; i++)

@@ -12,9 +12,9 @@ namespace AntColony
         static void Main(string[] args)
         {
             int numCities;
-            Console.WriteLine("Unesite broj gradova:");
+            Console.WriteLine("Unesite broj gradova manji od 100:");
             var input = Console.ReadLine();
-            while (Int32.TryParse(input, out numCities) == false || numCities <= 0)
+            while (Int32.TryParse(input, out numCities) == false || numCities <= 0||numCities>100)
             {
                 Console.WriteLine("Unos nije ispravan! Unesite ponovno:");
                 input = Console.ReadLine();
