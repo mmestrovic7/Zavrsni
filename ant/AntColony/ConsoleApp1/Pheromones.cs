@@ -19,7 +19,7 @@ public static class Pheromones
                 for (int k = 0; k < ants.Length; k++)
                 {
                     double length = TrailFunctions.TrailLength(ants[k], distances);
-                    double decrease = (1.0 - rho) * pheromones[i][j];//natural decrease by very little
+                    double decrease = (1.0 - rho) * pheromones[i][j];//natural decrease by very little 
                     double increase = 0.0;
                     if (AreCitiesConnected(i, j, ants[k]))
                         increase = (Q / length); //increasing pheromones on the city connections used on the trail

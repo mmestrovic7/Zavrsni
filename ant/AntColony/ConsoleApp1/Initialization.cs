@@ -37,9 +37,9 @@ public static class Init
 
         for (int i = 1; i < numCities; i++)
         {
-            int x = rand.Next(i, numCities);
-            int tmp = trail[x];
-            trail[x] = trail[i];
+            int r = rand.Next(i, numCities);
+            int tmp = trail[r];
+            trail[r] = trail[i];
             trail[i] = tmp;
         }
 

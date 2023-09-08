@@ -9,16 +9,15 @@ public static class AntMoves
     static Random rand = new Random();
     static double alpha = 3; //influence on pheromone levels
     static double beta = 2;//influence of favorability of distance
-    public static void UpdateAnts(int[][] ants, double[][] pheromones, int[][] dists, int start)
+    public static void UpdateAnts(int[][] ants, double[][] pheromones, int[][] distances, int start)
     {
-        int numCities = pheromones.Length;
         for (int i = 0; i < ants.Length; i++)
         {
-            int[] newTrail = NewTrail(pheromones, dists,start);
+            int[] newTrail = NewTrail(pheromones, distances, start);
             ants[i] = newTrail;
         }
     }
-    public static int[] NewTrail(double[][] pheromones, int[][] distances, int start)
+    static int[] NewTrail(double[][] pheromones, int[][] distances, int start)
     {
 
         int numCities = pheromones.Length;
@@ -42,15 +41,15 @@ public static class AntMoves
         double bestProbability = probs[0];
         //int nextCity=0;
         double[] cumulativeProbs = new double[probs.Length + 1];
-         cumulativeProbs[0] = 0;
-         for (int i = 0; i < probs.Length; i++)
-             cumulativeProbs[i + 1] = cumulativeProbs[i] + probs[i];
+        cumulativeProbs[0] = 0;
+        for (int i = 0; i < probs.Length; i++)
+            cumulativeProbs[i + 1] = cumulativeProbs[i] + probs[i];
 
-         double p = rand.NextDouble();// returns a number in range[0,1>
-         for (int i = 0; i < cumulativeProbs.Length - 1; i++)
-             if (p >= cumulativeProbs[i] && p < cumulativeProbs[i + 1])
-                 return i;
-         throw new Exception("Greška u funkciji NextCity");
+        double p = rand.NextDouble();// returns a number in range[0,1>
+        for (int i = 0; i < cumulativeProbs.Length - 1; i++)
+            if (p >= cumulativeProbs[i] && p < cumulativeProbs[i + 1])
+                return i;
+        throw new Exception("Greška u funkciji NextCity");
         /*
        for (int i = 1; i < probs.Length; i++)
             if (probs[i] > bestProbability)
