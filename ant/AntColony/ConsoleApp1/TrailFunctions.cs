@@ -35,9 +35,17 @@ public static class TrailFunctions
             city1 = trail[i];
             city2 = trail[i+1];
             totalLength += distances[city1][city2];//cumulative sum of distances between adjacent cities
+            
         }
         return totalLength;
 
+    }
+    public static void PrintTrail(int[] trail, int length)
+    {
+        if(trail.Length<=25)
+        foreach (int node in trail)
+            Console.Write(node + " ");
+        Console.WriteLine("Duljina puta: " + length);
     }
 
 

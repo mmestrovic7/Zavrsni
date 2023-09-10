@@ -18,10 +18,11 @@ C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\bin\Debug\netcoreapp3.1\
 C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\bin\Debug\netcoreapp3.1\AntColony.runtimeconfig.dev.json
 C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\bin\Debug\netcoreapp3.1\AntColony.dll
 C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\bin\Debug\netcoreapp3.1\AntColony.pdb
-C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\obj\Debug\netcoreapp3.1\AntColony.csprojAssemblyReference.cache
 C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\obj\Debug\netcoreapp3.1\AntColony.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\obj\Debug\netcoreapp3.1\AntColony.AssemblyInfoInputs.cache
 C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\obj\Debug\netcoreapp3.1\AntColony.AssemblyInfo.cs
 C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\obj\Debug\netcoreapp3.1\AntColony.dll
 C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\obj\Debug\netcoreapp3.1\AntColony.pdb
 C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\obj\Debug\netcoreapp3.1\AntColony.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\obj\Debug\netcoreapp3.1\AntColony.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Zavrsni\ant\AntColony\ConsoleApp1\obj\Debug\netcoreapp3.1\AntColony.GeneratedMSBuildEditorConfig.editorconfig
