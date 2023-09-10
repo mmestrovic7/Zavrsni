@@ -22,7 +22,7 @@ public static class Pheromones
                     double decrease = (1.0 - rho) * pheromones[i][j];//natural decrease by very little 
                     double increase = 0.0;
                     if (AreCitiesConnected(i, j, ants[k]))
-                        increase = (Q / length); //increasing pheromones on the city connections used on the trail
+                        increase = Q / length; //increasing pheromones on the city connections used on the trail
 
                     pheromones[i][j] = decrease + increase;
 

@@ -12,7 +12,7 @@ namespace AntColony
         static void Main(string[] args)
         {
             int numCities;
-            Console.WriteLine("Unesite broj gradova manji od 100:");
+            Console.WriteLine("Unesite broj gradova manji ili jednak 100:");
             var input = Console.ReadLine();
             while (Int32.TryParse(input, out numCities) == false || numCities <= 0||numCities>100)
             {

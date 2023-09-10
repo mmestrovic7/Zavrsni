@@ -38,7 +38,7 @@ public static class AntMoves
     static int NextCity(int currentCity, bool[] visited, double[][] pheromones, int[][] distances)
     {
         double[] probs = CalculateProbabilities(currentCity, visited, pheromones, distances);
-        double bestProbability = probs[0];
+        //double bestProbability = probs[0];
         //int nextCity=0;
         double[] cumulativeProbs = new double[probs.Length + 1];
         cumulativeProbs[0] = 0;
@@ -59,8 +59,6 @@ public static class AntMoves
             }
         return nextCity;         
         */
-
-
     }
     static double[] CalculateProbabilities(int currentCity, bool[] visited, double[][] pheromones, int[][] distances)
     {
